@@ -336,6 +336,69 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── TRAVEL / BEYOND ── */
+        #beyond { background: linear-gradient(160deg, rgba(20,40,60,0.6) 0%, var(--bg) 100%); }
+        .travel-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        .travel-stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .travel-stat:hover { border-color: rgba(34,211,238,0.35); transform: translateY(-3px); }
+        .travel-num {
+            font-size: 2.75rem; font-weight: 900; letter-spacing: -0.04em;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1; margin-bottom: 0.4rem;
+        }
+        .travel-label { font-size: 0.825rem; color: var(--muted); font-weight: 500; }
+        .travel-emoji { font-size: 1.6rem; margin-bottom: 0.6rem; }
+        .parks-intro {
+            font-size: 0.875rem; color: var(--muted); line-height: 1.65;
+            margin-bottom: 1.75rem; max-width: 680px;
+        }
+        .parks-regions {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+            gap: 1rem;
+        }
+        .region-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.25rem 1.4rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .region-card:hover { border-color: rgba(34,211,238,0.3); transform: translateY(-2px); }
+        .region-card.utah { border-color: rgba(212,175,55,0.2); }
+        .region-card.utah:hover { border-color: rgba(212,175,55,0.45); }
+        .region-name {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--cyan);
+            margin-bottom: 0.8rem; padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(34,211,238,0.15);
+        }
+        .region-name.utah-label { color: var(--gold); border-color: rgba(212,175,55,0.2); }
+        .park-item {
+            display: flex; align-items: center; gap: 0.55rem;
+            padding: 0.38rem 0; font-size: 0.825rem; font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--text);
+        }
+        .park-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .park-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            flex-shrink: 0; background: var(--cyan);
+            box-shadow: 0 0 5px rgba(34,211,238,0.5);
+        }
+        .park-dot.utah { background: var(--gold); box-shadow: 0 0 5px rgba(212,175,55,0.5); }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
             .nav-links { display: none; }
@@ -355,6 +418,7 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#awards">Awards</a></li>
+        <li><a href="#beyond">Adventures</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -683,6 +747,89 @@
                 <div class="award-title">ACM Student Chapter President</div>
                 <div class="award-desc">President of ACES-ACM, the official ACM student chapter of the CS Department at IIT Delhi.</div>
             </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ──────── BEYOND THE RESUME ──────── -->
+<div id="beyond">
+    <div class="section-wrap">
+        <p class="section-eyebrow">Life Outside the Terminal</p>
+        <h2 class="section-title">Adventures</h2>
+
+        <!-- Big stat counters -->
+        <div class="travel-stats">
+            <div class="travel-stat">
+                <div class="travel-emoji">✈️</div>
+                <div class="travel-num">5</div>
+                <div class="travel-label">Countries explored solo</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">🗺️</div>
+                <div class="travel-num">20+</div>
+                <div class="travel-label">US states visited</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">🚗</div>
+                <div class="travel-num">3,500+</div>
+                <div class="travel-label">Miles driven coast to coast</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">⛰️</div>
+                <div class="travel-num">13</div>
+                <div class="travel-label">National parks on one road trip</div>
+            </div>
+        </div>
+
+        <!-- National Parks -->
+        <p class="parks-intro">
+            Driven across <strong style="color:var(--text);">3,500+ miles</strong> of the continental US over multiple trips — from Florida's
+            coastlines to Utah's canyon country to the Pacific Northwest — picking up
+            <strong style="color:var(--text);">13 national parks</strong> and <strong style="color:var(--text);">20+ states</strong> along the way.
+            The highlights, by region:
+        </p>
+        <div class="parks-regions">
+
+            <div class="region-card">
+                <div class="region-name">Florida</div>
+                <div class="park-item"><div class="park-dot"></div>Everglades</div>
+                <div class="park-item"><div class="park-dot"></div>Biscayne</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">Southeast</div>
+                <div class="park-item"><div class="park-dot"></div>Great Smoky Mts.</div>
+                <div class="park-item"><div class="park-dot"></div>Mammoth Cave</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">Midwest</div>
+                <div class="park-item"><div class="park-dot"></div>Indiana Dunes</div>
+            </div>
+
+            <div class="region-card utah">
+                <div class="region-name utah-label">Utah's Mighty 5</div>
+                <div class="park-item"><div class="park-dot utah"></div>Arches</div>
+                <div class="park-item"><div class="park-dot utah"></div>Canyonlands</div>
+                <div class="park-item"><div class="park-dot utah"></div>Capitol Reef</div>
+                <div class="park-item"><div class="park-dot utah"></div>Bryce Canyon</div>
+                <div class="park-item"><div class="park-dot utah"></div>Zion</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">Southwest</div>
+                <div class="park-item"><div class="park-dot"></div>Grand Canyon</div>
+                <div class="park-item"><div class="park-dot"></div>Death Valley</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">Pacific Northwest</div>
+                <div class="park-item"><div class="park-dot"></div>Olympic</div>
+            </div>
+
         </div>
 
     </div>
