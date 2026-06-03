@@ -336,6 +336,73 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── TRAVEL / BEYOND ── */
+        #beyond { background: linear-gradient(160deg, rgba(20,40,60,0.6) 0%, var(--bg) 100%); }
+        .travel-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        .travel-stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .travel-stat:hover { border-color: rgba(34,211,238,0.35); transform: translateY(-3px); }
+        .travel-num {
+            font-size: 2.75rem; font-weight: 900; letter-spacing: -0.04em;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1; margin-bottom: 0.4rem;
+        }
+        .travel-label { font-size: 0.825rem; color: var(--muted); font-weight: 500; }
+        .travel-emoji { font-size: 1.6rem; margin-bottom: 0.6rem; }
+        .roadtrip-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: flex; flex-direction: column; gap: 1.25rem;
+        }
+        .roadtrip-header { display: flex; align-items: center; gap: 0.75rem; }
+        .roadtrip-title { font-size: 1.1rem; font-weight: 800; }
+        .roadtrip-subtitle { font-size: 0.85rem; color: var(--cyan); font-weight: 500; }
+        .roadtrip-route {
+            display: flex; align-items: center; gap: 0; overflow-x: auto;
+            padding: 1rem 0; scrollbar-width: none;
+        }
+        .roadtrip-route::-webkit-scrollbar { display: none; }
+        .route-node {
+            display: flex; flex-direction: column; align-items: center;
+            flex-shrink: 0; min-width: 90px;
+        }
+        .route-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--cyan); border: 2px solid var(--bg);
+            box-shadow: 0 0 8px rgba(34,211,238,0.6);
+            margin-bottom: 0.5rem; flex-shrink: 0;
+        }
+        .route-dot.start { background: var(--gold-light); box-shadow: 0 0 8px rgba(240,208,96,0.6); }
+        .route-dot.end   { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,0.6); }
+        .route-name { font-size: 0.7rem; font-weight: 600; color: var(--muted); text-align: center; line-height: 1.3; max-width: 80px; }
+        .route-line {
+            flex: 1; min-width: 20px; height: 2px;
+            background: linear-gradient(90deg, rgba(34,211,238,0.5), rgba(34,211,238,0.2));
+            align-self: center; margin-bottom: 1.5rem; flex-shrink: 0;
+        }
+        .roadtrip-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+        .roadtrip-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .rtag {
+            font-size: 0.75rem; font-weight: 600;
+            background: rgba(34,211,238,0.08); color: var(--cyan);
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: 100px; padding: 0.2rem 0.7rem;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
             .nav-links { display: none; }
@@ -355,6 +422,7 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#awards">Awards</a></li>
+        <li><a href="#beyond">Adventures</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -682,6 +750,124 @@
             <div>
                 <div class="award-title">ACM Student Chapter President</div>
                 <div class="award-desc">President of ACES-ACM, the official ACM student chapter of the CS Department at IIT Delhi.</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ──────── BEYOND THE RESUME ──────── -->
+<div id="beyond">
+    <div class="section-wrap">
+        <p class="section-eyebrow">Life Outside the Terminal</p>
+        <h2 class="section-title">Adventures</h2>
+
+        <!-- Big stat counters -->
+        <div class="travel-stats">
+            <div class="travel-stat">
+                <div class="travel-emoji">✈️</div>
+                <div class="travel-num">5</div>
+                <div class="travel-label">Countries explored solo</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">🗺️</div>
+                <div class="travel-num">20+</div>
+                <div class="travel-label">US states visited</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">🚗</div>
+                <div class="travel-num">3,500+</div>
+                <div class="travel-label">Miles driven coast to coast</div>
+            </div>
+            <div class="travel-stat">
+                <div class="travel-emoji">⛰️</div>
+                <div class="travel-num">13</div>
+                <div class="travel-label">National parks on one road trip</div>
+            </div>
+        </div>
+
+        <!-- Road trip feature card -->
+        <div class="roadtrip-card">
+            <div class="roadtrip-header">
+                <span style="font-size:2rem;">🛣️</span>
+                <div>
+                    <div class="roadtrip-title">The Great American Road Trip</div>
+                    <div class="roadtrip-subtitle">US Route 1 → US Route 101 &nbsp;·&nbsp; East Coast to West Coast</div>
+                </div>
+            </div>
+
+            <!-- Route visualisation -->
+            <div class="roadtrip-route">
+                <div class="route-node">
+                    <div class="route-dot start"></div>
+                    <div class="route-name">US-1<br>East Coast</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Shenandoah</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Great Smoky Mts.</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Arches</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Zion</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Bryce Canyon</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Grand Canyon</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Sequoia</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot"></div>
+                    <div class="route-name">Yosemite</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-node">
+                    <div class="route-dot end"></div>
+                    <div class="route-name">US-101<br>West Coast</div>
+                </div>
+            </div>
+
+            <div class="roadtrip-desc">
+                Drove <strong style="color:var(--text);">3,500+ miles</strong> across the continental United States — solo — threading through
+                <strong style="color:var(--text);">13 national parks</strong> from the Atlantic to the Pacific. Starting on <strong style="color:var(--text);">US Route 1</strong> on
+                the East Coast and finishing on the iconic <strong style="color:var(--text);">US Route 101</strong> along the Pacific, navigating
+                desert canyons, alpine forests, and coastal cliffs along the way.
+            </div>
+
+            <div class="roadtrip-tags">
+                <span class="rtag">🏔️ Arches</span>
+                <span class="rtag">🌲 Sequoia</span>
+                <span class="rtag">🏜️ Zion</span>
+                <span class="rtag">🌅 Bryce Canyon</span>
+                <span class="rtag">🦅 Grand Canyon</span>
+                <span class="rtag">🌿 Yosemite</span>
+                <span class="rtag">🌁 Shenandoah</span>
+                <span class="rtag">🚵 Great Smoky Mts.</span>
+                <span class="rtag">+ 5 more</span>
             </div>
         </div>
 
