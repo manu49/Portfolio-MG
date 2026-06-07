@@ -340,7 +340,47 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── TRAVEL / BEYOND ── */
+        /* ── PHOTO GALLERY ── */
+        .gallery-heading {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--muted);
+            margin: 2.5rem 0 1rem;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 220px 220px;
+            gap: 0.6rem;
+        }
+        .photo-item {
+            position: relative; overflow: hidden;
+            border-radius: 10px; cursor: pointer;
+        }
+        .photo-item.featured {
+            grid-column: span 2;
+        }
+        .photo-item img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            transition: transform 0.4s ease;
+        }
+        .photo-item:hover img { transform: scale(1.06); }
+        .photo-caption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 0.8rem 0.9rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.72));
+            font-size: 0.78rem; font-weight: 600; color: #fff;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .photo-item:hover .photo-caption { opacity: 1; }
+        @media (max-width: 700px) {
+            .photo-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+            .photo-item.featured { grid-column: span 2; height: 200px; }
+            .photo-item { height: 150px; }
+        }
         #beyond { background: linear-gradient(160deg, rgba(20,40,60,0.6) 0%, var(--bg) 100%); }
         .travel-stats {
             display: grid;
@@ -835,6 +875,31 @@
                 <div class="park-item"><div class="park-dot"></div>Olympic</div>
             </div>
 
+        </div>
+
+        <!-- Photo gallery -->
+        <p class="gallery-heading">Through the Lens</p>
+        <div class="photo-grid">
+            <div class="photo-item featured">
+                <img src="images/el-morro-puerto-rico.jpg" alt="El Morro Fort, Old San Juan, Puerto Rico" loading="lazy">
+                <div class="photo-caption">El Morro Fort &nbsp;·&nbsp; Old San Juan, Puerto Rico</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/forest-boardwalk.jpg" alt="Tropical forest boardwalk" loading="lazy">
+                <div class="photo-caption">Rainforest Boardwalk</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/caribbean-pier.jpg" alt="Caribbean pier" loading="lazy">
+                <div class="photo-caption">Caribbean Coast &nbsp;·&nbsp; Belize</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/coastal-cliffs.jpg" alt="Rocky coastal cliffs" loading="lazy">
+                <div class="photo-caption">Coastal Cliffs</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/southernmost-point.jpg" alt="Southernmost Point Continental USA, Key West" loading="lazy">
+                <div class="photo-caption">Southernmost Point &nbsp;·&nbsp; Key West, FL</div>
+            </div>
         </div>
 
     </div>
